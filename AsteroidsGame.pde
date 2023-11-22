@@ -1,4 +1,4 @@
-Star[] stars = new Star[300];
+Star[] stars = new Star[300]; //blah blah
 Spaceship bob = new Spaceship();
 
 public void setup() 
