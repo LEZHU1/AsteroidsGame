@@ -2,7 +2,7 @@ Star[] stars = new Star[300];
 Spaceship bob = new Spaceship();
 
 ArrayList <Asteroid> Aster =new ArrayList<Asteroid>();
-;
+
 
 public void setup()
 {
