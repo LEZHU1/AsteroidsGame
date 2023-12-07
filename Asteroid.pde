@@ -1,51 +1,38 @@
-Star[] stars = new Star[300];
-Spaceship bob = new Spaceship();
-
-ArrayList <Asteroid> Aster =new ArrayList<Asteroid>();
-;
-
-public void setup()
+class Asteroid extends Floater
 {
-  size(600, 600);
-  for (int i = 0; i<200; i++) {
-    stars[i] = new Star();
-  }
-  for (int i = 200; i<300; i++) {
-    stars[i] = new Moon();
-  }
-  for (int i = 0; i<15; i++) {
-    Aster.add(i, new Asteroid());
-  }
-}
+  private double rotSpeed;
 
-public void draw()
-{
-  background(0);
-  for (int i = 0; i<300; i++) {
-    stars[i].show();
+  public Asteroid() {
+    corners = 6;
+    rotSpeed = 2;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    xCorners[0] = (int)(Math.random()*6)-14-5;
+    yCorners[0] = (int)(Math.random()*6)-11-5;
+    xCorners[1] = (int)(Math.random()*6)+10+5;
+    yCorners[1] = (int)(Math.random()*6)-11-5;
+    xCorners[2] = (int)(Math.random()*6)+12+5;
+    yCorners[2] = (int)(Math.random()*6)-4-5;
+    xCorners[3] =(int)(Math.random()*6)+4+5;
+    yCorners[3] = (int)(Math.random()*6)+8+5;
+    xCorners[4] = (int)(Math.random()*6)-11-5;
+    yCorners[4] = (int)(Math.random()*6)+7+5;
+    xCorners[5] = (int)(Math.random()*6)-7-5;
+    yCorners[5] = (int)(Math.random()*6)-4-5;
+    myCenterX = (int)(Math.random()*600);
+    myCenterY = (int)(Math.random()*600);//holds center coordinates
+    myXspeed = myYspeed = (int)(Math.random()*10)-5; //holds the speed of travel in the x and y directions
+    myPointDirection = (int)(Math.random()*360);
+    myColor = color(255);
   }
-  for (int i = 0; i<Aster.size(); i++) {
-    Aster.get(i).show();
-    Aster.get(i).move();
-   float collision = dist((float)bob.getX(), (float)bob.getY(), (float)Aster.get(i).getX(), (float)Aster.get(i).getY());
-    if (collision < 10) {
-      Aster.remove(i);
-    }
-
+  public void move() {
+    turn(rotSpeed);
+    super.move();
   }
-  bob.show();
-  bob.move();
-  
-    }
-
-public void keyPressed() {
-  if (key == 'w') {
-    bob.accelerate(1.1);
-  } else if (key == 'a') {
-    bob.turn(-20);
-  } else if (key == 'd') {
-    bob.turn(20);
-  } else if (key == 'h') {
-    bob.hyperspace();
+    public double getX(){
+    return myCenterX;
+  }
+  public double getY(){
+    return myCenterY;
   }
 }
