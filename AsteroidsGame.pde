@@ -1,8 +1,12 @@
 Star[] stars = new Star[300];
 Spaceship bob = new Spaceship();
+boolean wa = false;
+boolean sa = false;
+boolean ab = false;
+boolean db = false;
 
-ArrayList <Asteroid> Aster =new ArrayList<Asteroid>();
-
+ArrayList <Asteroid> Aster = new ArrayList<Asteroid>();
+ArrayList <Bullet> Bull = new ArrayList <Bullet>();
 
 public void setup()
 {
@@ -27,27 +31,80 @@ public void draw()
   for (int i = 0; i<Aster.size(); i++) {
     Aster.get(i).show();
     Aster.get(i).move();
-   float collision = dist((float)bob.getX(), (float)bob.getY(), (float)Aster.get(i).getX(), (float)Aster.get(i).getY());
+    float collision = dist((float)bob.getX(), (float)bob.getY(), (float)Aster.get(i).getX(), (float)Aster.get(i).getY());
     if (collision < 10) {
       Aster.remove(i);
     }
-
+  }
+  
+  
+  if (wa == true) {
+    bob.accelerate(0.2);
+  } 
+  if (sa == true) {
+    bob.accelerate(-0.2);
+  }
+  if (ab == true) {
+    bob.turn(-10);
+  }
+  if (db == true) {
+    bob.turn(10);
+  }
+  
+  
+  for (int i = 0; i < Bull.size(); i++) {
+    Bull.get(i).show();
+    Bull.get(i).move();
+    Bull.get(i).accelerate(1);
+    for(int u = 0; u < Aster.size(); u++){
+    float collision = dist((float)Bull.get(i).getX(), (float)Bull.get(i).getY(), (float)Aster.get(u).getX(), (float)Aster.get(u).getY());
+    if (collision < 10) {
+      Bull.remove(i);
+      Aster.remove(u);
+      break;
+    }
+    }
   }
   bob.show();
   bob.move();
-  
-    }
+}
 
 
 
 public void keyPressed() {
   if (key == 'w') {
-    bob.accelerate(1.1);
-  } else if (key == 'a') {
-    bob.turn(-20);
-  } else if (key == 'd') {
-    bob.turn(20);
-  } else if (key == 'h') {
+    wa = true;
+  } 
+  if (key == 'a') {
+    ab = true;
+  } 
+  if (key == 'd') {
+    db = true;
+  } 
+  if (key == 's') {
+    sa = true;
+  } 
+  if (key == 'h') {
     bob.hyperspace();
+  } 
+  if (key == ' ') {
+    Bull.add(new Bullet(bob));
+  }
+}
+
+public void keyReleased() {
+  if (key == 'w') {
+    wa = false;
+    bob.myXspeed=0;
+    bob.myYspeed=0;
+} 
+  if (key == 'a') {
+    ab = false;
+  } 
+  if (key == 'd') {
+    db = false;
+  } 
+  if (key == 's') {
+    sa = false;
   }
 }
