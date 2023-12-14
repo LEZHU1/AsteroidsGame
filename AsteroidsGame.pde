@@ -5,7 +5,6 @@ boolean wa = false;
 boolean sa = false;
 boolean ab = false;
 boolean db = false;
-
 ArrayList <Asteroid> Aster = new ArrayList<Asteroid>();
 ArrayList <Bullet> Bull = new ArrayList <Bullet>();
 
