@@ -1,14 +1,17 @@
-class Star 
+class Star //note that this class does NOT extend Floater
 {
   protected int myX, myY;
-  public Star()
+  protected float opacity;
+  public Star(float o)
   {
   myX = (int)(Math.random()*600);
   myY = (int)(Math.random()*600);
+  opacity = o;
   }
+  
   public void show()
   {
-  fill(255, 100);
-  line(myX, myY, myX, myY);
+  stroke(255, opacity);
+  line(myX, myY, myX+2, myY+2);
   }
 }
