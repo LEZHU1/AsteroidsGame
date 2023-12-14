@@ -1,19 +1,34 @@
-
 class Spaceship extends Floater
 {
   public Spaceship() {
-    corners = 4;
+    corners = 12;
     xCorners = new int[corners];
-    yCorners = new int[corners];
-    xCorners[0] = -8;
-    yCorners[0] = -8;
-    xCorners[1] = 16;
-    yCorners[1] = 0;
-    xCorners[2] = -8;
-    yCorners[2] = 8;
-    xCorners[3] = -6;
-    yCorners[3] = 4;
-    myColor = 255;
+    yCorners = new int[corners]; 
+    xCorners[0] = -4;
+    yCorners[0] = 0;
+    xCorners[1] = -8;
+    yCorners[1] = 8;
+    xCorners[2] = 16;
+    yCorners[2] = 0;
+    xCorners[3] = -8;
+    yCorners[3] = -8;
+    xCorners[4] = -4;
+    yCorners[4] = 0;
+    xCorners[5] = -18;
+    yCorners[5] = -6;
+    xCorners[6] = -21;
+    yCorners[6] = -4;
+    xCorners[7] = -18;
+    yCorners[7] = -2;
+    xCorners[8] = -20;
+    yCorners[8] = 0;
+    xCorners[9] = -18;
+    yCorners[9] = 2;
+    xCorners[10] = -21;
+    yCorners[10] = 4;
+    xCorners[11] = -18;
+    yCorners[11] = 6;
+    
     myColor = 255;
     myCenterX = myCenterY = 300; //holds center coordinates
     myXspeed = myYspeed = 0; //holds the speed of travel in the x and y directions
