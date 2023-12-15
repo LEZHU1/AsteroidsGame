@@ -5,14 +5,15 @@ boolean wa = false;
 boolean sa = false;
 boolean ab = false;
 boolean db = false;
+
 ArrayList <Asteroid> Aster = new ArrayList<Asteroid>();
 ArrayList <Bullet> Bull = new ArrayList <Bullet>();
 
-//ArrayList <SmallA> Erika = new ArrayList<SmallA>();
+ArrayList <SmallA> Erika = new ArrayList<SmallA>();
 
 public void setup()
 {
-noFill();
+
   textSize(35);
   textAlign(CENTER);
   size(600, 600);
