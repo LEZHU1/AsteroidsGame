@@ -18,6 +18,8 @@ public class Timer {
     }
     
    public void stop() {
+    
+
         
          running = false;
     }
