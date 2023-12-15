@@ -129,7 +129,6 @@ public void keyReleased() {
 
 public void EndGame() {
   background(0);
-  Tim.stop();
  
   text("GOOD JOB !", 300, 325);
   text("reload page to play again", 300, 350);
