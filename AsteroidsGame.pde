@@ -9,7 +9,6 @@ boolean db = false;
 ArrayList <Asteroid> Aster = new ArrayList<Asteroid>();
 ArrayList <Bullet> Bull = new ArrayList <Bullet>();
 
-ArrayList <SmallA> Erika = new ArrayList<SmallA>();
 
 public void setup()
 {
@@ -89,8 +88,6 @@ if(Aster.size() == 0){
 
 
 public void keyPressed() {
-  Tim.start();
-
   if (key == 'w') {
     wa = true;
   }
