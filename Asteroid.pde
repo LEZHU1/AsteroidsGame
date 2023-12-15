@@ -1,9 +1,9 @@
 class Asteroid extends Floater
 {
-  private double rotSpeed;
+  protected double rotSpeed;
 
   public Asteroid() {
-    corners = 6;
+    corners = 7;
     rotSpeed = 2;
     xCorners = new int[corners];
     yCorners = new int[corners];
@@ -19,6 +19,8 @@ class Asteroid extends Floater
     yCorners[4] = (int)(Math.random()*6)+7+5;
     xCorners[5] = (int)(Math.random()*6)-7-5;
     yCorners[5] = (int)(Math.random()*6)-4-5;
+     xCorners[6] = (int)(Math.random()*6)-8-5;
+    yCorners[6] = (int)(Math.random()*6)-2-5;
     myCenterX = (int)(Math.random()*600);
     myCenterY = (int)(Math.random()*600);//holds center coordinates
     myXspeed = myYspeed = (int)(Math.random()*10)-5; //holds the speed of travel in the x and y directions
