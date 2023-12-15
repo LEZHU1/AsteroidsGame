@@ -12,7 +12,7 @@ ArrayList <Bullet> Bull = new ArrayList <Bullet>();
 
 public void setup()
 {
-
+noFill();
   textSize(35);
   textAlign(CENTER);
   size(600, 600);
