@@ -8,7 +8,7 @@ class Star //note that this class does NOT extend Floater
   myY = (int)(Math.random()*600);
   opacity = o;
   }
-
+  
   public void show()
   {
   stroke(255, opacity);
