@@ -88,6 +88,7 @@ if(Aster.size() == 0){
 
 
 public void keyPressed() {
+Tim.start();
   if (key == 'w') {
     wa = true;
   }
