@@ -88,9 +88,10 @@ if(Aster.size() == 0){
 
 
 public void keyPressed() {
-Tim.start();
   if (key == 'w') {
     wa = true;
+    Tim.start();
+
   }
   if (key == 'a') {
     ab = true;
