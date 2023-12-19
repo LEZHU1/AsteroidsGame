@@ -15,6 +15,7 @@ public void setup()
 
   textSize(35);
   textAlign(CENTER);
+noFill();
   size(600, 600);
   for (int i = 0; i<200; i++) {
     stars[i] = new Star(150.0);
@@ -130,9 +131,13 @@ public void keyReleased() {
 public void EndGame() {
   background(0);
  
-  text("GOOD JOB !", 300, 325);
-  text("reload page to play again", 300, 365);
+  text("GOOD JOB !", 300, 280);
+  text("reload page to play again", 300, 320);
   for (int i = 0; i<300; i++) {
     stars[i].show();
   }
+  for (int i = 0; i<Aster.size(); i++) {
+    Aster.get(i).show();
+    Aster.get(i).move();
+}
 }
