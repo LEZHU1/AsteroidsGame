@@ -12,6 +12,6 @@ class Star //note that this class does NOT extend Floater
   public void show()
   {
   stroke(255, opacity);
-  line(myX, myY, myX+2, myY+2);
+  line(myX, myY, myX+5, myY+5);
   }
 }
