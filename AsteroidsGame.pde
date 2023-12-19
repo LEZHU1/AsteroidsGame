@@ -131,7 +131,7 @@ public void EndGame() {
   background(0);
  
   text("GOOD JOB !", 300, 325);
-  text("reload page to play again", 300, 350);
+  text("reload page to play again", 300, 365);
   for (int i = 0; i<300; i++) {
     stars[i].show();
   }
